@@ -1,0 +1,48 @@
+#nav {
+    width: 100px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    color: #fff;
+    background-image: -webkit-gradient(linear,left bottom,left top,from(#2f232a),to(#f8f8f8));
+    background-image: -webkit-linear-gradient(bottom,#2f232a,#f8f8f8);
+    background-image: -o-linear-gradient(bottom,#2f232a,#f8f8f8);
+    background-image: linear-gradient(0deg,#2f232a,#f8f8f8);
+    -webkit-box-shadow: 10px 0 20px 0 rgba(0,0,0,.1), 5px 0 5px rgba(0,0,0,.2);
+    box-shadow: 10px 0 20px 0 rgba(0,0,0,.1), 5px 0 5px rgba(0,0,0,.2);
+}
+.imgBox {
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 20px #333;
+    left: 14px;
+    overflow: hidden;
+}
+.imgBox > img {
+    height:100%;
+    width:100%;
+}
+#nav-links {
+    height: 120px;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logout {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+}
+.a-tag {
+    position: relative;
+    top: 45px;
+}

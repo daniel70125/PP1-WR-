@@ -1,0 +1,1 @@
+select * from users2 where email = $1 and password = $2;

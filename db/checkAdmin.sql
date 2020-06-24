@@ -1,0 +1,1 @@
+select * from admins where email = $1 and password = $2;

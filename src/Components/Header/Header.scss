@@ -1,0 +1,23 @@
+.weather-feel {
+    color: blue;
+}
+#weather-cont {
+    display: flex;
+    width:70%;
+    margin:auto;
+    background-color: #d6d5d6;
+    margin-bottom:10px;
+    padding:10px;
+    color:white;
+    box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.weather-box {
+    width:33%;
+}
+
+.weather-box h5 {
+    font-size: 18px;
+    
+}

@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Routes from './routes';
+import Nav from './Components/Nav/Nav';
+import AdminNav from './Components/AdminNav/AdminNav';
+import Footer from './Components/Footer/Footer';
+import {getUser} from './Redux/loginReducer';
+import {connect} from 'react-redux';
+import HeaderJS from './Components/Header/Header';
 
-function App() {
+class App extends Component{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      
+    }
+  }
+  
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeaderJS />
+      <Nav />
+      <AdminNav />
+      {Routes}
+      <Footer />
     </div>
   );
-}
-
-export default App;
+  }
+} 
+const mapStateToProps = reduxState => reduxState;
+export default connect(mapStateToProps, {getUser})(App);
