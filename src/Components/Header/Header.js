@@ -32,7 +32,8 @@ class Header extends Component {
     render() { 
         console.log(this.state.weather.weather[0].icon)
         return ( 
-            this.props.location.pathname === '/' || this.props.location.pathname === '/admin' ? null :
+            this.props.location.pathname === '/' || this.props.location.pathname === '/register' || this.props.location.pathname === '/admin' ? null :
+            <div style={{'padding':'10px'}}>
             <div id='weather-cont'>
                 <div className='weather-box'>
                     <p>Today's weather looks like <br /> <p className='weather-feel'>{this.state.weather.weather[0].description}</p></p>
@@ -44,6 +45,7 @@ class Header extends Component {
                 <div className='weather-box'>
                     <h5 className='weather-feel'>{this.state.weather.name}</h5>
                 </div>
+            </div>
             </div>
          );
     }

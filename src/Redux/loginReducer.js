@@ -15,6 +15,9 @@ const GET_USER = 'GET_USER';
 const LOGOUT = 'LOGOUT';
 const GET_JOBS = 'GET_JOBS';
 const GET_WEATHER = 'GET_WEATHER';
+const ALL_JOBS = 'ALL_JOBS';
+// const REGISTER = 'REGISTER' ;
+
 export function getWeather(){
     const weather = axios.get('http://api.openweathermap.org/data/2.5/weather?q=New+Orleans,usa&units=imperial&APPID=361b17e462c23405876fe5009cefde8b');
 
@@ -29,6 +32,9 @@ export function loginUser(user){
         payload: user
     }
 }
+// export function register(){
+//     const 
+// }
 export function getJobs(id){
      const jobs = axios.post(`/admin/getJobs`, {id}) ;
 
@@ -37,6 +43,15 @@ export function getJobs(id){
         payload: jobs
     }
     
+}
+export function getAllJobs(){
+    const jobs = axios.get(`/jobs`) ;
+
+   return {
+       type: ALL_JOBS,
+       payload: jobs
+   }
+   
 }
 export function getUser(){
     const user = axios.get('/session');
@@ -63,6 +78,12 @@ switch(type){
     case GET_JOBS + '_FULFILLED':
         return {...state, jobs: payload.data, isLoading: false}
     case GET_JOBS + '_REJECTED':
+        return initialState
+        case ALL_JOBS + '_PENDING':
+        return {...state, isLoading: true}
+    case ALL_JOBS + '_FULFILLED':
+        return {...state, jobs: payload.data, isLoading: false}
+    case ALL_JOBS + '_REJECTED':
         return initialState
     case GET_USER + '_PENDING':
         return {...state}

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {getUser} from '../../Redux/loginReducer';
+import {getUser, getAllJobs} from '../../Redux/loginReducer';
 import {connect} from 'react-redux';
 import Loading from '../Loading/Loading';
 import {Link} from 'react-router-dom';
@@ -15,35 +15,40 @@ class Dashboard extends Component {
             ok: ""
          }
     }
-    componentDidMount(){
-        // this.props.getUser();
-        setTimeout(()=> {
-            if (this.props.isLoggedIn === false){
-                this.props.history.push('/')
-            }
-        }, 1000)
+    async componentDidMount(){
+        this.props.getUser();
+        if (this.props.isLoggedIn === false){
+            this.props.history.push('/')
+        }
+        this.props.getAllJobs()
     }
     componentDidUpdate(prev){
         if (this.props.isLoggedIn === false){
             this.props.history.push('/')
         }
     }
+    
     render() { 
-        console.log(this.props)
+        let posts = this.props.jobs.map((el, i) => {
+            return <div className='dash-job-cont'>
+            <Link to={`/job/${el.id}`} key={i}>
+              <img alt = '.img' src={el.img} /> <br />
+                <span>Title:</span><h3 className='post-title'>{el.title}</h3>
+                <span>Location:</span><h3 className='post-title'>{el.location}</h3>
+                <span>Pay</span><h3 className='post-title'>${el.pay}/Hr.</h3>
+            </Link>
+            </div>
+          })
         return ( 
             this.props.isLoading ? <Loading /> : 
-            <div>
-                {
-                    this.state.jobs.map((e, i) => {
-                        return <Link to='/'>
-                        <div>Hello</div>
-                        </Link>
-                    })
-                }
+            <div style={{'padding': '10px'}}>
+            <div id='main-dash-cont'>
+                {posts}
+            </div>
             </div>
          );
     }
 }
  
 const mapStateToProps = reduxState => reduxState;
-export default connect(mapStateToProps, {getUser})(Dashboard);
+export default connect(mapStateToProps, {getUser, getAllJobs})(Dashboard);

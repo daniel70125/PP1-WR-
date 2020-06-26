@@ -7,7 +7,9 @@ class Loading extends Component {
     }
     render() { 
         return ( 
-            <div>Loading</div>
+            <div>
+                <img alt='.img'id='loading-screen' src='https://i.imgur.com/0hewHKs.gif' />
+            </div>
          );
     }
 }

@@ -1,0 +1,27 @@
+.card2 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 68%;
+    margin: 15px auto;
+    padding: 15px;
+    background-image: linear-gradient(0deg, #2f232a, #f8f8f8);
+    display: flex;
+}
+#card2-img {
+    width:30%;
+    float:left;
+}
+.contact-box {
+    width:30%;
+
+}
+.skills-box {
+    border:2px solid green;
+    width: 30%;
+}
+.skills-box li:nth-child(odd) {
+    color:green
+}
+a:visited {
+    color:black;
+}

@@ -13,17 +13,22 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     secret: SESSION_SECRET,
-    cookie: {maxAge: 1000 * 60}
+    cookie: {maxAge: 100000}
 }))
 ;
 
 
-app.delete('/logout', ctrl.delete)
+app.delete('/logout', ctrl.delete);
+app.delete('/job/:id', ctrl.deletePost);
+app.post('/job/accept', ctrl.acceptJob);
 app.post('/admin/editJob', ctrl.editJob);
 app.post('/admin/login', ctrl.adminLogin)
+app.post('/register', ctrl.register);
 app.post('/admin/addjob', ctrl.addJob)
 app.post('/admin/getJobs', ctrl.getAdminJobs);
+app.post('/myJob', ctrl.getMyJob);
 app.post('/login', ctrl.login);
+app.get('/jobs', ctrl.getAllJobs);
 app.get('/job/:id', ctrl.getJob)
 app.get('/session', (req, res) => {
     if (req.session.user){

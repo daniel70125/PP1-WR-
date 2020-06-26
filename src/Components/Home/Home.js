@@ -3,6 +3,7 @@ import {loginUser, getUser} from '../../Redux/loginReducer';
 import {connect} from 'react-redux';
 import './Home.scss'
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class Home extends Component {
     constructor(props) {
@@ -14,8 +15,10 @@ class Home extends Component {
          }
     }
     componentDidUpdate(prevProp){
-        if (prevProp.isLoggedIn !== this.props.isLoggedIn){
-            console.log('yup')
+        if (prevProp.isLoggedIn === this.props.isLoggedIn){
+            console.log('yep');
+        } else {
+            this.props.history.push('/dashboard');
         }
     }
     async login (){
@@ -47,7 +50,7 @@ class Home extends Component {
                 <input placeholder='E-Mail' onChange={(e) => this.setState({email: e.target.value})} /> <br />
                 <input type='password' placeholder='Password' onChange={(e) => this.setState({password: e.target.value})} /><br />
                 <button onClick={() => this.login()}>Login</button>
-                <button>Register</button>
+                <Link to='/register'><button>Register</button></Link>
 
                 <h5 id='h5'> </h5>
                 </div>

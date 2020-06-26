@@ -19,16 +19,20 @@ class AddJob extends Component {
     componentDidMount(){
         this.props.getUser();
     }
+    componentDidUpdate(prev){
+        if (this.props.isLoggedIn === false){
+            this.props.history.push('/admin')
+        }
+    }
     updateState(e){
         this.setState({
             [e.target.name]: e.target.value
         })
     }
-    addJob(){
+    async addJob(){
         const {title, description, location, img, company_id, pay} = this.state
-        axios.post('/admin/addJob', {title, description, location, company_id, img, pay})
-        .then((res) => console.log(res))
-        .catch(err => console.log(err));
+        const addedJob = await axios.post('/admin/addJob', {title, description, location, company_id, img, pay})
+        console.log(addedJob);
         this.props.history.push('/admin/dashboard')
     }
     render() { 

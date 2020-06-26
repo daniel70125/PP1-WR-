@@ -2,8 +2,14 @@ footer {
     width: 68.7%;
     background-image: linear-gradient(0deg, #443a40, #544c50);
     box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.2);
-    padding: 20px;
     margin-left: 14vw;
     margin-top:20px;
     border-radius: 10px;
+}
+@media only screen and (max-width: 768px) {
+    footer{
+        width:100%;
+        margin-left:0;
+    }
+    
 }

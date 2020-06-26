@@ -21,17 +21,12 @@ class AdminDashboard extends Component {
         }
         
         this.props.getJobs(this.props.user.id)
-        this.setState({
-            jobs: this.props.jobs
-        })
     }
     componentDidUpdate(prev){
-        
         if (this.props.isLoggedIn === false){
             this.props.history.push('/admin')
         }
     }
-    
     render() { 
         let posts = this.props.jobs.map((el, i) => {
             return <div className='dash-job-cont'>
@@ -40,8 +35,6 @@ class AdminDashboard extends Component {
                 <span>Title:</span><h3 className='post-title'>{el.title}</h3>
                 <span>Location:</span><h3 className='post-title'>{el.location}</h3>
                 <span>Pay</span><h3 className='post-title'>${el.pay}/Hr.</h3>
-                <button>Edit</button>
-                <button>Delete</button>
             </Link>
             </div>
           })

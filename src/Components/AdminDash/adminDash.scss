@@ -2,7 +2,6 @@ $myColor: green;
 @mixin job-display-boxes {
     margin:10px;
     width:25%;
-    padding:10px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -29,7 +28,6 @@ $myColor: green;
     width: 70%;
     position: relative;
     left: 180px;
-    padding: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -41,4 +39,16 @@ $myColor: green;
     padding: 5px;
     margin:0px 15px;
 }
+@media only screen and (max-width: 768px) {
+    #main-dash-cont {
+        flex-direction: column;
+        position: static;
+        width:100%;
+        padding:0;
+    }
+    .dash-job-cont {
+        width:100%;
 
+    }
+    
+}

@@ -9,8 +9,12 @@ class Footer extends Component {
     }
     render() { 
         return ( 
-            this.props.location.pathname === '/' || this.props.location.pathname === '/admin' ? null :
-            <footer>D.Wright 2020#</footer>
+            this.props.location.pathname === '/' || this.props.location.pathname === '/register' || this.props.location.pathname === '/admin' ? null :
+            <div style={{'padding': '10px'}}>
+                <div>
+                D.Wright 2020@
+                </div>
+            </div>
          );
     }
 }

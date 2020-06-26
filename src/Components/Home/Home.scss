@@ -19,7 +19,17 @@
     border:0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
-.home-box-main > button {
+.home-box-main  button {
     margin-top: 10px;
     padding: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .home-box-main {
+        width:80%;
+    }
+    .home-box-main > input{
+        width:100%;
+    }
+    
 }
