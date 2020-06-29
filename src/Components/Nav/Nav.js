@@ -45,12 +45,14 @@ class Nav extends Component {
                     <Link className="a-tag" to="/admin/addjob">Add Job</Link>
                     <Link className="a-tag" to="/admin/profile">My Profile</Link>
                 </div>
-                <Link onClick={() => this.logout2()} className="logout">Logout</Link>
+                <Link onClick={() => this.logout2()} className="logout">
+                <i id='logout-img' className="fa fa-sign-out"></i>
+                </Link>
             </div>
+            <div style={{'padding': '10px'}}>
             <div id='mobile-nav'>
-                <Link to='/admin/dashboard'><li>Home</li></Link>
-                <Link to='/admin/addjob'><li>Add Job</li></Link>
-                <Link to='/admin/profile'><li>My Profile</li></Link>
+                
+            </div>
             </div>
             </div>
             :
@@ -65,14 +67,19 @@ class Nav extends Component {
                     <Link to="/dashboard">Home</Link>
                     <Link to="/profile">My Profile</Link>
                 </div>
-                <Link onClick={() => this.logout()} className="logout">Logout</Link>
+                <Link onClick={() => this.logout()} className="logout">
+                <i id='logout-img' className="fa fa-sign-out"></i>
+                </Link>
             </div>
+            <div style={{'padding': '10px'}}>
             <div id='mobile-nav'>
             
                 <Link to='/dashboard'><li>Home</li></Link>
                 <Link to='profile'><li>My Profile</li></Link>
-                <Link onClick={() => this.logout()} >Logout</Link>
-            
+                <Link onClick={() => this.logout()} >
+                <i id='logout-img' className="fa fa-sign-out"></i>
+                </Link>
+            </div>
             </div>
             </div>
          );

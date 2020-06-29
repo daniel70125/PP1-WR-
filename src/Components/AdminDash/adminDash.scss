@@ -1,6 +1,7 @@
 $myColor: green;
 @mixin job-display-boxes {
     margin:10px;
+    
     width:25%;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -30,9 +31,11 @@ $myColor: green;
     left: 180px;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 .dash-job-cont img {
-    width:80%
+    width:80%;
+    margin:10px;
 }
 .dash-job-cont button {
     margin-top: 10px;
@@ -48,7 +51,7 @@ $myColor: green;
     }
     .dash-job-cont {
         width:100%;
-
+        margin:0;
+        margin: 15px 0px;
     }
-    
 }

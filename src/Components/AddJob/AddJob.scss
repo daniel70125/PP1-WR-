@@ -23,3 +23,13 @@ textarea {
   input:hover, textarea:hover {
     background-color: lightgrey;
   }
+
+  @media only screen and (max-width: 768px) {  
+    .add-job-cont img {
+   width:100%;
+    }
+    .add-job-cont {
+      width:90%;
+      margin-bottom:45px;
+    }
+}

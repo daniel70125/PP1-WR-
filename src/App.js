@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer';
 import {getUser} from './Redux/loginReducer';
 import {connect} from 'react-redux';
 import HeaderJS from './Components/Header/Header';
+import Header2 from './Components/Header2/Header2';
 
 class App extends Component{
   constructor(props){

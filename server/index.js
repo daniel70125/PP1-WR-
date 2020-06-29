@@ -5,8 +5,9 @@ let massive = require('massive');
 let ctrl = require('./controller');
 const session = require('express-session');
 const axios = require('axios');
+const nodemailer = require('nodemailer');
 
-const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT} = process.env
+const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT, PASS, USER} = process.env
 
 app.use(express.json());
 app.use(session({
@@ -14,8 +15,30 @@ app.use(session({
     saveUninitialized: true,
     secret: SESSION_SECRET,
     cookie: {maxAge: 100000}
-}))
-;
+}));
+
+// let transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: USER,
+//         pass: PASS
+//     }
+// })
+
+// let mailOptions = {
+//     from: 'dwrighttt504@gmail.com',
+//     to: 'dwrighttt504@gmail.com',
+//     subject: 'Testing123',
+//     text: 'itworks'
+// }
+
+// transporter.sendMail(mailOptions, (err, data) => {
+//     if (err) {
+//         console.log(err)
+//     } else {
+//         console.log('Email Sent')
+//     }
+// })
 
 
 app.delete('/logout', ctrl.delete);

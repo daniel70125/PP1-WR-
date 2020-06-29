@@ -16,12 +16,30 @@
 
 }
 .skills-box {
-    border:2px solid green;
     width: 30%;
 }
-.skills-box li:nth-child(odd) {
-    color:green
-}
+
 a:visited {
     color:black;
+}
+
+@media only screen and (max-width: 768px) {
+    .card2 {
+        flex-direction: column;
+        width:80%;
+    }
+    .contact-box {
+        width:90%;
+    }
+    .skills-box {
+        width:100%;
+    }
+    .skills-box > ul {
+        list-style: none;
+        padding:0;
+    }
+    #card2-img {
+        width:100%;
+        margin-bottom:10px;
+    }
 }

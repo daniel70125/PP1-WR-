@@ -41,6 +41,7 @@
     position: absolute;
     bottom: 20px;
     left: 30px;
+    font-size: 40px;
 }
 .a-tag {
     position: relative;
@@ -49,8 +50,10 @@
 #mobile-nav {
     width:100%;
     display:none;
-    background-color: beige;
+    background-color: #d6d5d6;
     justify-content: space-around;
+
+    
 }
 #mobile-nav > a {
     list-style: none;
@@ -58,13 +61,26 @@
 #mobile-nav > a:hover {
     color:grey;
 }
+#logout-img {
+    width: 50%;
+    margin-left: -28px;
+}
+
+
 @media only screen and (max-width: 768px) {
     #nav {
         display:none;
     }
     #mobile-nav {
         display:flex;
-        padding: 10px;
+    }
+    #mobile-nav > a{
+        margin:10px;
+    }
+    #logout-img {
+        width: 30px;
+        height: 30px;
+        font-size:25px;
     }
     
 }

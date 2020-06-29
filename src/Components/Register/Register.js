@@ -52,6 +52,9 @@ class Register extends Component {
             [e.target.name]: e.target.value
         })
     }
+    cancel(){
+        this.props.history.push('/');
+    }
     render() { 
         return ( 
             <div id='home-cont'>
@@ -70,6 +73,7 @@ class Register extends Component {
                         <span>Skill 3: </span><input name='skill3' onChange={(e) => this.updateState(e)} placeholder='Welder' /> <br />
                     </div>
                     <button onClick={() => this.register()}>Register</button>
+                    <button onClick={() => this.cancel()}>Cancel</button>
                 </div>
             </div>
          );

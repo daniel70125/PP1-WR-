@@ -33,16 +33,16 @@ class Header extends Component {
         console.log(this.state.weather.weather[0].icon)
         return ( 
             this.props.location.pathname === '/' || this.props.location.pathname === '/register' || this.props.location.pathname === '/admin' ? null :
-            <div style={{'padding':'10px'}}>
+            <div>
             <div id='weather-cont'>
                 <div className='weather-box'>
                     <p>Today's weather looks like <br /> <p className='weather-feel'>{this.state.weather.weather[0].description}</p></p>
                 </div>
-                <div className='weather-box'>
+                <div className='padding-top weather-box'>
                     <img src={this.state.img} alt='.img' /> <br />
                     <span className='weather-feel'>{this.state.weather.main.temp}° F</span>
                 </div>
-                <div className='weather-box'>
+                <div className='padding-top weather-box'>
                     <h5 className='weather-feel'>{this.state.weather.name}</h5>
                 </div>
             </div>
