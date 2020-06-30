@@ -8,7 +8,7 @@ const axios = require('axios');
 const nodemailer = require('nodemailer');
 
 const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT, PASS, USER} = process.env
-app.use(express.static(`${__dirname}/../build`));
+app.use(express.static(`${__dirname}/../build`)); 
 app.use(express.json());
 app.use(session({
     resave: false,
