@@ -29,8 +29,7 @@ class Header extends Component {
         
     }
     
-    render() { 
-        console.log(this.state.weather.weather[0].icon)
+    render() {
         return ( 
             this.props.location.pathname === '/' || this.props.location.pathname === '/register' || this.props.location.pathname === '/admin' ? null :
             <div>

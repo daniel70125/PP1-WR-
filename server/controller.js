@@ -41,7 +41,7 @@ module.exports = {
         if (!user[0] || !user[0].role_id){
             return res.status(404).send('Incorrect E-Mail or Password !')
         }
-        console.log(user[0].role_id)
+        
         req.session.user = user[0];
         res.status(200).send(req.session.user);
     },
@@ -71,7 +71,7 @@ module.exports = {
         const db = req.app.get('db');
         const {id, title, description, location, company_id, img, pay} = req.body;
         let editedJob = await db.editJob(id, title, description, location, company_id, img, pay)
-        console.log(editedJob);
+
         if (!editedJob[0]){
             return res.sendStatus(404)
         }
@@ -105,7 +105,7 @@ module.exports = {
         const hash = bcrypt.hashSync(password, salt)
         
         const newUser = await db.newUser([email, hash, username, img,  skill1, skill2, skill3, username ])
-        console.log(newUser);
+
         req.session.user = newUser[0];
 
         res.status(200).send(req.session.user);
@@ -129,5 +129,15 @@ module.exports = {
             res.sendStatus(404);
         }
         res.status(200).send(jobs);
+    },
+    cancelJob: async (req, res) => {
+        const db = req.app.get('db');
+        const {id} = req.params;
+        
+        const job = await db.getJob(id);
+        const {title, description, location, company_id, worker_id, img, pay} = job[0];
+       const canceledJob = await db.cancel(id, title, description, location, company_id, null, img, pay);
+       res.status(200).send('Canceled Shift');
+        
     }
 }

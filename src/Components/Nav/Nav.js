@@ -27,7 +27,6 @@ class Nav extends Component {
         axios.delete('/logout')
         .then(() => this.props.logout() )
         .catch(err => console.log(err))
-        this.props.history.push('/admin')
     }
     render() {
         return ( 
@@ -51,7 +50,9 @@ class Nav extends Component {
             </div>
             <div style={{'padding': '10px'}}>
             <div id='mobile-nav'>
-                
+                <Link to='/admin/dashboard'><li>Home</li></Link>
+                <Link to='/admin/addjob'><li>Add Job</li></Link>
+                <Link to='/admin/profile'><li>My Profile</li></Link>
             </div>
             </div>
             </div>
@@ -67,7 +68,7 @@ class Nav extends Component {
                     <Link to="/dashboard">Home</Link>
                     <Link to="/profile">My Profile</Link>
                 </div>
-                <Link onClick={() => this.logout()} className="logout">
+                <Link to='/' onClick={() => this.logout()} className="logout">
                 <i id='logout-img' className="fa fa-sign-out"></i>
                 </Link>
             </div>
@@ -76,7 +77,7 @@ class Nav extends Component {
             
                 <Link to='/dashboard'><li>Home</li></Link>
                 <Link to='profile'><li>My Profile</li></Link>
-                <Link onClick={() => this.logout()} >
+                <Link to='/' onClick={() => this.logout()} >
                 <i id='logout-img' className="fa fa-sign-out"></i>
                 </Link>
             </div>

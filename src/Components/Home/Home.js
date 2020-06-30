@@ -16,7 +16,6 @@ class Home extends Component {
     }
     componentDidUpdate(prevProp){
         if (prevProp.isLoggedIn === this.props.isLoggedIn){
-            console.log('yep');
         } else {
             this.props.history.push('/dashboard');
         }

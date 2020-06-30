@@ -9,7 +9,7 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            jobs: [{title: 'hello'}]
+            jobs: [{title: 'hello', location:'1212 nowhere Ave', pay:0, img:'https://blacknewschannel.com/wp-content/uploads/2020/06/Chuck-E-Cheese.jpg'}]
          }
     }
     async componentDidMount(){
@@ -19,6 +19,10 @@ class Profile extends Component {
         jobs: jobs.data
     })
     }
+   async cancel(id){
+       const newid = await axios.post(`/cancelJob/${id}`);
+       this.props.history.push('/dashboard');
+    }
     render() { 
         let posts = this.state.jobs.map((el, i) => {
             return <div className='dash-job-cont'>
@@ -27,7 +31,9 @@ class Profile extends Component {
                 <span>Title:</span><h3 className='post-title'>{el.title}</h3>
                 <span>Location:</span><h3 className='post-title'>{el.location}</h3>
                 <span>Pay</span><h3 className='post-title'>${el.pay}/Hr.</h3>
+                
             </Link>
+            <button onClick={() => this.cancel(el.id)}>Cancel</button>
             </div>
           })
         return ( 

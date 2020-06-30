@@ -30,7 +30,7 @@ class Dashboard extends Component {
     
     render() { 
         let posts = this.props.jobs.map((el, i) => {
-            return <div className='dash-job-cont'>
+            return <div key={i} className='dash-job-cont'>
             <Link to={`/job/${el.id}`} key={i}>
               <img alt = '.img' src={el.img} /> <br />
                 <span>Title:</span><h3 className='post-title'>{el.title}</h3>

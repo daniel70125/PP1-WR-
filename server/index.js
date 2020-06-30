@@ -8,7 +8,7 @@ const axios = require('axios');
 const nodemailer = require('nodemailer');
 
 const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT, PASS, USER} = process.env
-
+app.use(express.static(`${__dirname}/../build`));
 app.use(express.json());
 app.use(session({
     resave: false,
@@ -43,6 +43,7 @@ app.use(session({
 
 app.delete('/logout', ctrl.delete);
 app.delete('/job/:id', ctrl.deletePost);
+app.post('/cancelJob/:id', ctrl.cancelJob);
 app.post('/job/accept', ctrl.acceptJob);
 app.post('/admin/editJob', ctrl.editJob);
 app.post('/admin/login', ctrl.adminLogin)

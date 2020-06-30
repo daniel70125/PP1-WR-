@@ -92,7 +92,7 @@ class Jobs extends Component {
             
             :
             
-            <div className="card">
+            <div style={{'margin-bottom': '55px'}}className="card">
                     <img src={this.state.post.img} alt="Avatar" />
                     <div className="container">
                         <span>Job Type:</span><h4><b>{this.state.post.title}</b></h4>
