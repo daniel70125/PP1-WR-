@@ -22,14 +22,25 @@
 a:visited {
     color:black;
 }
-
+.skills-box > h5 {
+    margin: 0;
+    font-size: 25px;
+    color: darkgrey;
+    text-decoration: underline;
+}
+.contact-box  span {
+    margin: 0;
+    font-size: 25px;
+    color: darkgrey;
+    text-decoration: underline;
+}
 @media only screen and (max-width: 768px) {
     .card2 {
         flex-direction: column;
         width:80%;
     }
     .contact-box {
-        width:90%;
+        width:100%;
     }
     .skills-box {
         width:100%;

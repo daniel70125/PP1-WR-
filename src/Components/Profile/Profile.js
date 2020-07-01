@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import './Profile.scss';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import {getUser} from '../../Redux/loginReducer';
 
 class Profile extends Component {
     constructor(props) {
@@ -13,6 +14,10 @@ class Profile extends Component {
          }
     }
     async componentDidMount(){
+        this.props.getUser();
+        if (this.props.isLoggedIn === false){
+            this.props.history.push('/')
+        }
         const {id} = this.props.user;
     const jobs = await axios.post('myJob', {id});
     this.setState({
@@ -38,7 +43,7 @@ class Profile extends Component {
           })
         return ( 
             <div>
-            <div className="card2">
+            <div style={{'color': 'snow'}} className="card2">
                     <img img='.img' id='card2-img'src={this.props.user.img} alt="Avatar" />
                     <div className="contact-box">
                         <span>Name:</span><h4><b>{this.props.user.username}</b></h4>
@@ -63,4 +68,4 @@ class Profile extends Component {
     }
 }
 let mapStateToProps = state => state
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, {getUser})(Profile);

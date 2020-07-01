@@ -15,8 +15,8 @@ class App extends Component{
       
     }
   }
-  componentDidUpdate(){
-    
+ async componentDidUpdate(){
+    await this.props.getUser();
   }
   render(){
   return (

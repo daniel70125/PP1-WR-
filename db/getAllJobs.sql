@@ -1,1 +1,2 @@
-select * from jobs;
+SELECT * FROM jobs
+ORDER BY id DESC;

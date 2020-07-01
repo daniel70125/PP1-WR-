@@ -49,7 +49,8 @@ class Home extends Component {
                 <input placeholder='E-Mail' onChange={(e) => this.setState({email: e.target.value})} /> <br />
                 <input type='password' placeholder='Password' onChange={(e) => this.setState({password: e.target.value})} /><br />
                 <button onClick={() => this.login()}>Login</button>
-                <Link to='/register'><button>Register</button></Link>
+                <Link to='/register'><button>Register</button></Link> <br />
+                <p>Are you an ADMINISTRATOR? <Link style={{'color': 'coral'}}to={'/admin'}>Click here</Link> ..</p>
 
                 <h5 id='h5'> </h5>
                 </div>
