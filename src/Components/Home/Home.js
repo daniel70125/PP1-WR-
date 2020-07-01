@@ -20,19 +20,20 @@ class Home extends Component {
     //         this.props.history.push('/dashboard');
     //     }
     // }
-    async login (){
+    login (){
         const {email, password} = this.state;
         const body = {
             email,
             password
         }
         
-        const user = await axios.post('/login', body);
-        console.log(user);
-        this.setState({
-            user: user.data
+        axios.post('/login', body)
+        .then(res => {
+            this.props.history.push('/dashboard')
+            this.props.loginUser(res.data)
         })
-      this.props.loginUser(user);
+        .catch(err => console.log(err));
+        // console.log(user);
       
     //   if (this.props.isLoggedIn === true){
     //     this.props.history.push('/dashboard');
