@@ -16,12 +16,12 @@ class Dashboard extends Component {
          }
     }
     async componentDidMount(){
-       await this.props.getUser();
+       await this.props.getUser()
+       .then(res => console.log(res))
+       .catch(err => this.props.history.push('/'))
        console.log(this.props.isLoggedIn);
-        if (this.props.isLoggedIn === false){
-            this.props.history.push('/')
-        }
-        this.props.getAllJobs()
+        
+    this.props.getAllJobs()
     }
     // componentDidUpdate(prev){
     //     if (this.props.isLoggedIn === false){
