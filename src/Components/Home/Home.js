@@ -34,9 +34,9 @@ class Home extends Component {
         })
       this.props.loginUser(user);
       
-      if (this.props.isLoggedIn === true){
-        this.props.history.push('/dashboard');
-      }
+    //   if (this.props.isLoggedIn === true){
+    //     this.props.history.push('/dashboard');
+    //   }
       
     }
     render() { 
