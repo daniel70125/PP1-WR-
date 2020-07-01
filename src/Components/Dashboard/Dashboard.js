@@ -16,7 +16,8 @@ class Dashboard extends Component {
          }
     }
     async componentDidMount(){
-        this.props.getUser();
+       await this.props.getUser();
+       console.log(this.props.isLoggedIn);
         if (this.props.isLoggedIn === false){
             this.props.history.push('/')
         }

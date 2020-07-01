@@ -17,6 +17,7 @@ class App extends Component{
   }
  async componentDidUpdate(){
     await this.props.getUser();
+    
   }
   render(){
   return (
