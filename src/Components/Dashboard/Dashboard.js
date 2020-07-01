@@ -23,11 +23,11 @@ class Dashboard extends Component {
         }
         this.props.getAllJobs()
     }
-    componentDidUpdate(prev){
-        if (this.props.isLoggedIn === false){
-            this.props.history.push('/')
-        }
-    }
+    // componentDidUpdate(prev){
+    //     if (this.props.isLoggedIn === false){
+    //         this.props.history.push('/')
+    //     }
+    // }
     
     render() { 
         let posts = this.props.jobs.map((el, i) => {
