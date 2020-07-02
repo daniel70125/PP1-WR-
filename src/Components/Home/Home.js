@@ -14,12 +14,12 @@ class Home extends Component {
             user: {}
          }
     }
-    // componentDidUpdate(prevProp){
-    //     if (prevProp.isLoggedIn === this.props.isLoggedIn){
-    //     } else {
-    //         this.props.history.push('/dashboard');
-    //     }
-    // }
+    componentDidUpdate(prevProp){
+        if (prevProp.isLoggedIn === this.props.isLoggedIn){
+        } else {
+            this.props.history.push('/dashboard');
+        }
+    }
     async login (){
         const {email, password} = this.state;
         const body = {
