@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Routes from './routes';
-import Nav from './Components/Nav/Nav';
+// import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer/Footer';
 import {getUser} from './Redux/loginReducer';
 import {connect} from 'react-redux';
@@ -23,7 +23,7 @@ class App extends Component{
   return (
     <div className="App">
       <HeaderJS />
-      <Nav />
+      {/* <Nav /> */}
       {Routes}
       <Footer />
     </div>
