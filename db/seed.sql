@@ -1,9 +1,9 @@
 CREATE TABLE users2 (
     id serial primary key,
-    email varchar(250),
+    email varchar(550),
     username varchar(50),
     password varchar(200),
-    img varchar(250),
+    img varchar(550),
     rating int,
     skill_1 varchar(50),
     skill_2 varchar(50),
@@ -18,7 +18,9 @@ CREATE TABLE admins (
     description varchar(250),
     location varchar(250),
     rating int,
-    number int,
+    website varchar(500),
+    lat varchar(50),
+    long varchar(50),
     role_id int
 );
 CREATE TABLE jobs (

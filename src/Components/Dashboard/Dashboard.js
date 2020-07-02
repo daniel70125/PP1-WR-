@@ -19,15 +19,15 @@ class Dashboard extends Component {
         
         this.props.getUser();
         if (this.props.isLoggedIn === false){
-            // this.props.history.push('/')
+            this.props.history.push('/')
         }
         this.props.getAllJobs()
     }
-    // componentDidUpdate(prev){
-    //     if (this.props.isLoggedIn === false){
-    //         this.props.history.push('/')
-    //     }
-    // }
+    componentDidUpdate(prev){
+        if (this.props.isLoggedIn === false){
+            this.props.history.push('/')
+        }
+    }
     
     render() { 
         console.log(this.props);

@@ -34,14 +34,15 @@ export class MapContainer extends Component {
       width: '68%',
       height: '48vh'
     }
+    const {lat, long} = this.props;
     return (
       <div className='okdiv' style={{'width': '150px'}}>
 <Map 
-style={style} google={this.props.google} zoom={14} onClick={this.onMapClicked}
+google={this.props.google} zoom={14} onClick={this.onMapClicked}
 initialCenter={{ lat: 29.958890, lng: -90.101740 }}
 > 
     <Marker
-        title={this.props.username}
+        title={this.props.user.username}
         name={'SOMA'}
         position={{lat: 29.958890, lng: -90.101740}} 
         />

@@ -155,11 +155,13 @@ module.exports = {
             let mailOptions = {
                 from: 'dwrighttt504@gmail.com',
                 to: email,
-                subject: "Hello ✔", // plain text body
+                subject: "Signup Completed! ✔", // plain text body
                 html: `<h1>Hello ${username} !</h1>
                     <p>This is an automated message from Darth Vader, "I am your father now !"</p>
                     <p>No, but seriously welcome to my site!</p>
-                    <a href="http://68.183.132.10:4000/#/">Google</a>
+                    <a href="http://68.183.132.10:4000/#/admin">Jobbly</a>
+                    <h5>email: admin1@gmail.com</h5>
+                    <h5> password: admin1</h5>
                 `, // html body
             }
             

@@ -41,7 +41,7 @@ class AddJob extends Component {
             <div>
                 <div className='add-job-cont'>
                     <img alt={this.state.img} src={this.props.user.img} /> <br />
-                    <span>Title: </span><input name='title' onChange={(e) => this.updateState(e)}/> <br />
+                    <span>Title: </span><input style={{'position': 'relative', 'left': '14px'}} name='title' onChange={(e) => this.updateState(e)}/> <br />
                     <span>Location: </span><input name='location' onChange={(e) => this.updateState(e)}/> <br />
                     <span>Pay Rate: </span><input name='pay' onChange={(e) => this.updateState(e)}/> <br />
                     <span>Description: </span><textarea type='textarea'name='description' onChange={(e) => this.updateState(e)}></textarea> <br />

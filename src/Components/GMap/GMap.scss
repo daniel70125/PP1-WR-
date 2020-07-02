@@ -7,5 +7,17 @@
     height:  300px !important;
     width:  100% !important;
   }
+  .okdiv > div > div {
+    width:68%;
+    height:48vh;
+  }
 
-  
+  @media only screen and (max-width: 768px) {
+    #map {
+      width:68%;
+    }
+    .okdiv > div > div {
+      width: 80%;
+    height: 48vh;
+    }
+}

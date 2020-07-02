@@ -22,21 +22,16 @@ class AdminProfile extends Component {
                     <img img='.img' id='card2-img'src={this.props.user.img} alt="Avatar" />
                     <div className="contact-box">
                         <span>Name:</span><h4><b>{this.props.user.username}</b></h4>
-                        <span>Phone:</span><h4><b>{this.props.user.phone}</b></h4>
+                        <span>Webite:</span><h4><b>{this.props.user.website}</b></h4>
                         <span>E-Mail:</span><br /><a style={{'color': 'black'}} href={a}><b>{this.props.user.email}</b></a>
                     </div>
-                    {/* <div className='skills-box'>
+                    <div style={{"paddingTop": "40px"}}className='skills-box'>
                         <h5>Rating</h5>
-                        <ul>
-                            <li>Javascript</li>
-                            <li>HTML5</li>
-                            <li>Crazy</li>
-                            <li>Kinda</li>
-                        </ul>
-                    </div> */}
+                        <h1>4.6</h1>
+                    </div>
             </div>
             <div style={{'height' : '48vh', 'marginBottom': '48px'}}className="card2">
-                    <GMap username={this.props.user.username}/>
+                    <GMap user={this.props.user}/>
             </div>
             </div>
          );
