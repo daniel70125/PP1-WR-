@@ -1,4 +1,7 @@
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const nodemailer  = require('nodemailer');
+
+
 
 
 module.exports = {
@@ -21,9 +24,6 @@ module.exports = {
         }
 
     },
-    getAllJobs: (req, res) => {
-
-    },
     getAdminJobs: async(req, res) => {
         const {id} = req.body
         const db = req.app.get('db');
@@ -44,6 +44,7 @@ module.exports = {
         
         req.session.user = user[0];
         res.status(200).send(req.session.user);
+        email();
     },
     addJob: async (req, res) => {
         const db = req.app.get('db');
@@ -139,5 +140,37 @@ module.exports = {
        const canceledJob = await db.cancel(id, title, description, location, company_id, null, img, pay);
        res.status(200).send('Canceled Shift');
         
+    },
+    email: (req, res) => {
+        const {email, username} = req.body;
+        let emailsender = () => {
+            let transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'dwrighttt504@gmail.com',
+                    pass: 'DWright21'
+                }
+            })
+            
+            let mailOptions = {
+                from: 'dwrighttt504@gmail.com',
+                to: email,
+                subject: "Hello ✔", // plain text body
+                html: `<h1>Hello ${username} !</h1>
+                    <p>This is an automated message from Darth Vader, "I am your father now !"</p>
+                    <p>No, but seriously welcome to my site!</p>
+                    <a href="http://68.183.132.10:4000/#/">Google</a>
+                `, // html body
+            }
+            
+            transporter.sendMail(mailOptions, (err, data) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    console.log(data)
+                }
+            })
+        }
+        emailsender();
     }
 }

@@ -42,6 +42,8 @@ class Register extends Component {
             user: user.data
         })
       this.props.loginUser(user);
+
+      await axios.post('/email', {username, email});
       
       if (this.props.isLoggedIn === true){
         this.props.history.push('/dashboard');

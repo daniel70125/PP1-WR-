@@ -3,4 +3,4 @@ import loginReducer from './loginReducer';
 import promiseMiddleware from 'redux-promise-middleware';
 
 
-export default createStore(loginReducer, applyMiddleware(promiseMiddleware));
+export default createStore(loginReducer, applyMiddleware(promiseMiddleware) );

@@ -14,35 +14,38 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     secret: SESSION_SECRET,
-    cookie: {maxAge: 100000}
+    cookie: {maxAge: 1000 * 60 * 60}
 }));
-
-// let transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//         user: USER,
-//         pass: PASS
-//     }
-// })
-
-// let mailOptions = {
-//     from: 'dwrighttt504@gmail.com',
-//     to: 'dwrighttt504@gmail.com',
-//     subject: 'Testing123',
-//     text: 'itworks'
-// }
-
-// transporter.sendMail(mailOptions, (err, data) => {
-//     if (err) {
-//         console.log(err)
-//     } else {
-//         console.log('Email Sent')
-//     }
-// })
+let email = () => {
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'dwrighttt504@gmail.com',
+            pass: 'DWright21'
+        }
+    })
+    
+    let mailOptions = {
+        from: 'dwrighttt504@gmail.com',
+        to: 'dwrighttt504@gmail.com',
+        subject: "Hello ✔", // Subject line
+        text: "Hello world?", // plain text body
+        html: "<a href='google.com'>Hello world?</a>", // html body
+    }
+    
+    transporter.sendMail(mailOptions, (err, data) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(data)
+        }
+    })
+}
 
 
 app.delete('/logout', ctrl.delete);
 app.delete('/job/:id', ctrl.deletePost);
+app.post('/email', ctrl.email)
 app.post('/cancelJob/:id', ctrl.cancelJob);
 app.post('/job/accept', ctrl.acceptJob);
 app.post('/admin/editJob', ctrl.editJob);
@@ -56,9 +59,10 @@ app.get('/jobs', ctrl.getAllJobs);
 app.get('/job/:id', ctrl.getJob)
 app.get('/session', (req, res) => {
     if (req.session.user){
-        res.status(200).send(req.session.user)
+        res.status(200).send(req.session.user);
+        
     } else {
-        res.sendStatus(401);
+        // email();
     }
 })
 

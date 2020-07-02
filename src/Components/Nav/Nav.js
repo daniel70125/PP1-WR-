@@ -31,7 +31,7 @@ class Nav extends Component {
     render() {
         return ( 
             this.props.location.pathname === '/' || this.props.location.pathname === '/register'  || this.props.location.pathname === '/admin'  ? null : 
-            // this.props.user.role_id ? 
+            this.props.user.role_id ? 
             <div>
             <div id="nav">
                 <div className='imgBox'>
@@ -56,9 +56,35 @@ class Nav extends Component {
             </div>
             </div>
             </div>
-        
+            :
+            <div>
+            <div id="nav">
+                <div className='imgBox'>
+                 <img alt=".img" src={this.props.user.img} />
+                <h3>{this.props.user.username}</h3>
+                </div>
+                <p>{this.props.username}</p>
+                <div id="nav-links">
+                    <Link to="/dashboard">Home</Link>
+                    <Link to="/profile">My Profile</Link>
+                </div>
+                <Link to='/' onClick={() => this.logout()} className="logout">
+                <i id='logout-img' className="fa fa-sign-out"></i>
+                </Link>
+            </div>
+            <div style={{'padding': '10px'}}>
+            <div id='mobile-nav'>
+            
+                <Link to='/dashboard'><li>Home</li></Link>
+                <Link to='profile'><li>My Profile</li></Link>
+                <Link to='/' onClick={() => this.logout()} >
+                <i id='logout-img' className="fa fa-sign-out"></i>
+                </Link>
+            </div>
+            </div>
+            </div>
          );
-        }
+    }
 }
 
 let mapStateToProps = state => state

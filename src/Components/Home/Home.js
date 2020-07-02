@@ -14,30 +14,29 @@ class Home extends Component {
             user: {}
          }
     }
-    // componentDidUpdate(prevProp){
-    //     if (prevProp.isLoggedIn === this.props.isLoggedIn){
-    //     } else {
-    //         this.props.history.push('/dashboard');
-    //     }
-    // }
-    login (){
+    componentDidUpdate(prevProp){
+        if (prevProp.isLoggedIn === this.props.isLoggedIn){
+        } else {
+            this.props.history.push('/dashboard');
+        }
+    }
+    async login (){
         const {email, password} = this.state;
         const body = {
             email,
             password
         }
         
-        axios.post('/login', body)
-        .then(res => {
-            this.props.history.push('/dashboard')
-            this.props.loginUser(res.data)
+        const user = await axios.post('/login', body);
+        console.log(user);
+        this.setState({
+            user: user.data
         })
-        .catch(err => console.log(err));
-        // console.log(user);
+      this.props.loginUser(user);
       
-    //   if (this.props.isLoggedIn === true){
-    //     this.props.history.push('/dashboard');
-    //   }
+      if (this.props.isLoggedIn === true){
+        this.props.history.push('/dashboard');
+      }
       
     }
     render() { 

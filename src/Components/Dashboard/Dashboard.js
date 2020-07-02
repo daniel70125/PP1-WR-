@@ -16,20 +16,21 @@ class Dashboard extends Component {
          }
     }
     async componentDidMount(){
-       await this.props.getUser()
-       .then(res => console.log(res))
-       .catch(err => this.props.history.push('/'))
-       console.log(this.props.isLoggedIn);
         
-    this.props.getAllJobs()
+        this.props.getUser();
+        if (this.props.isLoggedIn === false){
+            this.props.history.push('/')
+        }
+        this.props.getAllJobs()
     }
-    // componentDidUpdate(prev){
-    //     if (this.props.isLoggedIn === false){
-    //         this.props.history.push('/')
-    //     }
-    // }
+    componentDidUpdate(prev){
+        if (this.props.isLoggedIn === false){
+            this.props.history.push('/')
+        }
+    }
     
     render() { 
+        console.log(this.props);
         let posts = this.props.jobs.map((el, i) => {
             return <div key={i} className='dash-job-cont'>
             <Link to={`/job/${el.id}`} key={i}>
