@@ -16,32 +16,6 @@ app.use(session({
     secret: SESSION_SECRET,
     cookie: {maxAge: 1000 * 60 * 60}
 }));
-let email = () => {
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'dwrighttt504@gmail.com',
-            pass: 'DWright21'
-        }
-    })
-    
-    let mailOptions = {
-        from: 'dwrighttt504@gmail.com',
-        to: 'dwrighttt504@gmail.com',
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<a href='google.com'>Hello world?</a>", // html body
-    }
-    
-    transporter.sendMail(mailOptions, (err, data) => {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log(data)
-        }
-    })
-}
-
 
 app.delete('/logout', ctrl.delete);
 app.delete('/job/:id', ctrl.deletePost);
@@ -61,8 +35,6 @@ app.get('/session', (req, res) => {
     if (req.session.user){
         res.status(200).send(req.session.user);
         
-    } else {
-        // email();
     }
 })
 
