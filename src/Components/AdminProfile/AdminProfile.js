@@ -22,10 +22,10 @@ class AdminProfile extends Component {
                     <img img='.img' id='card2-img'src={this.props.user.img} alt="Avatar" />
                     <div className="contact-box">
                         <span>Name:</span><h4><b>{this.props.user.username}</b></h4>
-                        <span>Webite:</span><h4><b>{this.props.user.website}</b></h4>
-                        <span>E-Mail:</span><br /><a style={{'color': 'black'}} href={a}><b>{this.props.user.email}</b></a>
+                        <span>Webite:</span><h4 style={{"overflow": "auto"}}><b>{this.props.user.website}</b></h4>
+                        <span>E-Mail:</span><br /><a style={{'color': 'black', "marginTop": "10px"}} href={a}><b>{this.props.user.email}</b></a>
                     </div>
-                    <div style={{"paddingTop": "40px"}}className='skills-box'>
+                    <div className='skills-box2'>
                         <h5>Rating</h5>
                         <h1>4.6</h1>
                     </div>

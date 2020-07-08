@@ -16,16 +16,20 @@
 .container {
   padding: 2px 16px;
 }
-.container button {
-  margin: 10px 25px;
+.container {
+  button {
+    margin: 10px 25px;
     padding: 5px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .card {
     width:90%;
   }
-  .card > img {
-    width:80%;
+  .card {
+    img {
+      width:80%;
+    }
   }
 }

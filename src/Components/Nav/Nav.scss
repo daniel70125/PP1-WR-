@@ -25,9 +25,11 @@
     left: 14px;
     overflow: hidden;
 }
-.imgBox > img {
-    height:100%;
-    width:100%;
+.imgBox {
+    img {
+        height:100%;
+        width:100%;
+    }
 }
 #nav-links {
     height: 120px;
@@ -55,11 +57,15 @@
 
     
 }
-#mobile-nav > a {
-    list-style: none;
+#mobile-nav {
+    a {
+        list-style: none;
+    }
 }
-#mobile-nav > a:hover {
-    color:grey;
+#mobile-nav {
+    a:hover {
+        color:grey;
+    }
 }
 #logout-img {
     width: 50%;
@@ -74,8 +80,10 @@
     #mobile-nav {
         display:flex;
     }
-    #mobile-nav > a{
-        margin:10px;
+    #mobile-nav {
+        a{
+            margin:10px;
+        }
     }
     #logout-img {
         width: 30px;

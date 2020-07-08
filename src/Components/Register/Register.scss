@@ -8,12 +8,14 @@
     top:80px;
     background-color: #4d5358;
 }
-.container > input {
-    padding:10px;
-    border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    border-radius: 7px;
-    margin:5px;
+.container {
+    input {
+        padding:10px;
+        border:0;
+        box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+        border-radius: 7px;
+        margin:5px;
+    }
 }
 
 @media only screen and (max-width: 768px) {

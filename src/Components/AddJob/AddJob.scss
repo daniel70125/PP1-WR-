@@ -5,11 +5,18 @@
     padding: 20px;
     margin-bottom:45px;
 }
-.add-job-cont > input {
+.add-job-cont {
+  input {
     margin:10px 0px;
     padding:10px;
-  border:0;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
+}
+.add-job-cont {
+  img {
+    width:80%;
+  }
 }
 textarea {
     width:100%;
@@ -26,8 +33,10 @@ textarea {
   }
 
   @media only screen and (max-width: 768px) {  
-    .add-job-cont img {
-   width:100%;
+    .add-job-cont {
+      img {
+        width:100%;
+        }
     }
     .add-job-cont {
       width:90%;

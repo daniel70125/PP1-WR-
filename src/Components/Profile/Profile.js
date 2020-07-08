@@ -47,7 +47,6 @@ class Profile extends Component {
                     <img img='.img' id='card2-img'src={this.props.user.img} alt="Avatar" />
                     <div className="contact-box">
                         <span>Name:</span><h4><b>{this.props.user.username}</b></h4>
-                        <span>Phone:</span><h4><b>{this.props.user.email}</b></h4>
                         <span>E-Mail:</span><h4><b>{this.props.user.email}</b></h4>
                     </div>
                     <div className='skills-box'>

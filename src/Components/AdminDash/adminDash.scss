@@ -1,7 +1,6 @@
 $myColor: green;
 @mixin job-display-boxes {
     margin:10px;
-    
     width:25%;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -33,14 +32,18 @@ $myColor: green;
     justify-content: space-between;
     margin-bottom: 40px;
 }
-.dash-job-cont img {
-    width:80%;
-    margin:10px;
+.dash-job-cont {
+    img {
+        width:80%;
+        margin:10px;
+    }
 }
-.dash-job-cont button {
-    margin-top: 10px;
-    padding: 5px;
-    margin:0px 15px;
+.dash-job-cont {
+    button {
+        margin-top: 10px;
+        padding: 5px;
+        margin:0px 15px;
+    }
 }
 @media only screen and (max-width: 768px) {
     #main-dash-cont {
@@ -54,7 +57,9 @@ $myColor: green;
         margin:0;
         margin: 15px 0px;
     }
-    .dash-job-cont > img {
-        width:60%;
+    .dash-job-cont {
+        img {
+            width:60%;
+        }
     }
 }

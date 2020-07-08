@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Loading.scss'
 
 class Loading extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class Loading extends Component {
     render() { 
         return ( 
             <div>
-                <img alt='.img'id='loading-screen' src='https://i.imgur.com/0hewHKs.gif' />
+                <img alt='.img'className='loading-screen' src='https://i.imgur.com/0hewHKs.gif' />
             </div>
          );
     }
